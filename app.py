@@ -1,11 +1,11 @@
-import streamlit as st 
+import streamlit as st  
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 import base64
 
 # --- PAGE CONFIG ---
-st.set_page_config(page_title="CMELT - Composite Tool", layout="wide")
+st.set_page_config(page_title="CMALT - Composite Tool", layout="wide")
 
 # --- SESSION STATE INIT ---
 if "name_entered" not in st.session_state:
@@ -27,21 +27,21 @@ if not st.session_state["name_entered"]:
                 unsafe_allow_html=True
             )
 
-    show_logo_centered("cmelt_logo.png", width=220)
+    show_logo_centered("cmalt_logo.png", width=220)
 
     # --- MAIN SUBTITLE ONLY ---
     st.markdown("""
         <h3 style="text-align:center; font-size: 24px; color: #333;">
-            <strong>Composite Micromechanical Educational Learning Tool</strong>
+            <strong>Composite Micromechanical Analysis Learning Tool</strong>
         </h3>
     """, unsafe_allow_html=True)
 
     # Learn More Section (optional)
-    with st.expander("📘 Learn More about CMELT"):
+    with st.expander("📘 Learn More about CMALT"):
         st.markdown("""
-        **CMELT** (Composite Micromechanical Educational Learning Tool) is developed to provide users with an intuitive interface for understanding composite micromechanics, specifically the calculation of elastic properties such as **E₁ (longitudinal modulus)** and **E₂ (transverse modulus)**.
+        **CMALT** (Composite Micromechanical Analysis Learning Tool) is developed to provide users with an intuitive interface for understanding composite micromechanics, specifically the calculation of elastic properties such as **E₁ (longitudinal modulus)** and **E₂ (transverse modulus)**.
 
-        🔹 **Why CMELT?**
+        🔹 **Why CMALT?**
         - Supports engineering education and composite design.
         - Visualizes how fiber and matrix properties affect stiffness.
         - Provides side-by-side comparison for two composite cases.
@@ -51,7 +51,7 @@ if not st.session_state["name_entered"]:
         - Academic instructors  
         - Industry engineers needing quick estimations
 
-        CMELT bridges theory and application — making composite learning interactive, fast, and fun.
+        CMALT bridges theory and application — making composite learning interactive, fast, and fun.
         """)
 
     # Name Input
