@@ -14,7 +14,6 @@ if "name_entered" not in st.session_state:
 # --- FRONT PAGE (NAME ENTRY) ---
 if not st.session_state["name_entered"]:
 
-    # --- DISPLAY LOGO CENTERED AND BIGGER ---
     def show_logo_centered(image_path, width=200):
         with open(image_path, "rb") as img_file:
             encoded = base64.b64encode(img_file.read()).decode()
@@ -29,14 +28,12 @@ if not st.session_state["name_entered"]:
 
     show_logo_centered("cmalt_logo.png", width=220)
 
-    # --- MAIN SUBTITLE ONLY ---
     st.markdown("""
         <h3 style="text-align:center; font-size: 24px; color: #333;">
             <strong>Composite Micromechanical Analysis Learning Tool</strong>
         </h3>
     """, unsafe_allow_html=True)
 
-    # Learn More Section (optional)
     with st.expander("📘 Learn More about CMALT"):
         st.markdown("""
         **CMALT** (Composite Micromechanical Analysis Learning Tool) is developed to provide users with an intuitive interface for understanding composite micromechanics, specifically the calculation of elastic properties such as **E₁ (longitudinal modulus)** and **E₂ (transverse modulus)**.
@@ -54,7 +51,6 @@ if not st.session_state["name_entered"]:
         CMALT bridges theory and application — making composite learning interactive, fast, and fun.
         """)
 
-    # Name Input
     name = st.text_input("👤 Enter your name:", key="username_input")
     if st.button("➡️ Proceed"):
         if name.strip() != "":
@@ -65,10 +61,8 @@ if not st.session_state["name_entered"]:
             st.warning("Please enter your name before proceeding.")
 
 else:
-    # --- USER GREETING ---
     st.markdown(f"<h3 style='text-align:center;'>👋 Welcome, {st.session_state['username']}!</h3>", unsafe_allow_html=True)
 
-    # --- SESSION STATE DEFAULTS ---
     defaults = {
         "Ef1": 0.0, "Em1": 0.0, "Vf1": 0.0, "calc1": False,
         "Ef2": 0.0, "Em2": 0.0, "Vf2": 0.0, "calc2": False
@@ -77,7 +71,6 @@ else:
         if k not in st.session_state:
             st.session_state[k] = v
 
-    # --- RESET FUNCTIONS ---
     def reset_case1():
         st.session_state["Ef1"] = 0.0
         st.session_state["Em1"] = 0.0
@@ -90,7 +83,6 @@ else:
         st.session_state["Vf2"] = 0.0
         st.session_state["calc2"] = False
 
-    # --- THEORY ---
     with st.expander("📘 Theory: What Are E₁ and E₂?"):
         st.markdown("""
         - **E₁ (Longitudinal Modulus)**: Stiffness along the fiber direction.  
@@ -180,6 +172,6 @@ else:
 st.markdown("""
 <hr style="margin-top: 50px;">
 <p style='text-align: center; font-size: 14px; color: gray;'>
-    Developed by Schufee Suhaime – 2025
+    Developed by S. A. Suhaime, F. R. Rosli, M. N. A. Ab Patar, M. S. Ismail, and J. Mahmud – 2025
 </p>
 """, unsafe_allow_html=True)
